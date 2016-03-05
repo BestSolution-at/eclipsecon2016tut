@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: at.bestsolution.e4fx.ui
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.e4.core.contexts
+Import-Package: javax.inject,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.fx.core.di;version="2.3.0"
