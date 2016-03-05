@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_ZYK-MeE9EeWE6sjYlonxkA" elementId="org.eclipse.e4.application" bindingContexts="_ZYK-MOE9EeWE6sjYlonxkA">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_ZYK-MeE9EeWE6sjYlonxkA" elementId="org.eclipse.e4.application" bindingContexts="_ZYK-MOE9EeWE6sjYlonxkA">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_xfcNMOIOEeWpcZzo955fwA" elementId="at.bestsolution.e4fx.app.trimmedwindow.0" x="30" y="30" width="800" height="600">
     <children xsi:type="basic:PartSashContainer" xmi:id="_zcZCEOIOEeWpcZzo955fwA" elementId="at.bestsolution.e4fx.app.partsashcontainer.0" horizontal="true">
-      <children xsi:type="basic:Part" xmi:id="_0nx3IOIOEeWpcZzo955fwA" elementId="at.bestsolution.e4fx.app.part.0" contributionURI="bundleclass://at.bestsolution.e4fx.ui/at.bestsolution.e4fx.ui.V1        d"/>
+      <children xsi:type="basic:Part" xmi:id="_0nx3IOIOEeWpcZzo955fwA" elementId="at.bestsolution.e4fx.app.part.0" contributionURI="bundleclass://at.bestsolution.e4fx.ui/at.bestsolution.e4fx.ui.V1"/>
       <children xsi:type="basic:Part" xmi:id="_e4EP4OKyEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.part.1" contributionURI="bundleclass://at.bestsolution.e4fx.ui/at.bestsolution.e4fx.ui.V2"/>
     </children>
+    <mainMenu xmi:id="_uq-xYOLmEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_whsbYOLmEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.menu.sample" label="Sample">
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_R_DjAOLnEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.directmenuitem.toggleperspective" label="Toggle Perspective" contributionURI="bundleclass://at.bestsolution.e4fx.app/at.bestsolution.e4fx.app.handler.TogglePerspective"/>
+      </children>
+    </mainMenu>
   </children>
   <rootContext xmi:id="_ZYK-MOE9EeWE6sjYlonxkA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_ZYK-MuE9EeWE6sjYlonxkA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
