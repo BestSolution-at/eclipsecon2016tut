@@ -12,13 +12,16 @@
     <mainMenu xmi:id="_uq-xYOLmEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.menu.0">
       <children xsi:type="menu:Menu" xmi:id="_whsbYOLmEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.menu.sample" label="Sample">
         <children xsi:type="menu:DirectMenuItem" xmi:id="_R_DjAOLnEeWHJY-ti7zNcw" elementId="at.bestsolution.e4fx.app.directmenuitem.toggleperspective" label="Toggle Perspective" contributionURI="bundleclass://at.bestsolution.e4fx.app/at.bestsolution.e4fx.app.handler.TogglePerspective"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_qC7P0OOkEeWv-rDn3LmQxA" elementId="at.bestsolution.e4fx.app.handledmenuitem.opendialog" label="Open Dialog" command="_iyrVUOOkEeWv-rDn3LmQxA"/>
       </children>
     </mainMenu>
   </children>
+  <handlers xmi:id="_jSGcQOOkEeWv-rDn3LmQxA" elementId="at.bestsolution.e4fx.app.handler.0" contributionURI="bundleclass://at.bestsolution.e4fx.app/at.bestsolution.e4fx.app.handler.DialogSample" command="_iyrVUOOkEeWv-rDn3LmQxA"/>
   <rootContext xmi:id="_ZYK-MOE9EeWE6sjYlonxkA" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_ZYK-MuE9EeWE6sjYlonxkA" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_ZYK-M-E9EeWE6sjYlonxkA" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <commands xmi:id="_iyrVUOOkEeWv-rDn3LmQxA" elementId="at.bestsolution.e4fx.app.command.opendialog" commandName="opendialog"/>
   <addons xmi:id="_ZYK-NOE9EeWE6sjYlonxkA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_ZYK-NeE9EeWE6sjYlonxkA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_ZYK-NuE9EeWE6sjYlonxkA" elementId="org.eclipse.fx.ui.keybindings.e4.service" contributionURI="bundleclass://org.eclipse.fx.ui.keybindings.e4/org.eclipse.fx.ui.keybindings.e4.BindingServiceAddon"/>
