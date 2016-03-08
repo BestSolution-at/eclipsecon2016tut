@@ -28,6 +28,10 @@ public class DialogSample_Solution {
 		dialogService.openDialog(MyLightweightDialog.class, ModalityScope.WINDOW);
 	}
 
+
+
+
+
 	static class ModelTreeCell extends TreeCell<MApplicationElement> {
 		public ModelTreeCell(TreeView<MApplicationElement> v) {
 		}

@@ -2,12 +2,13 @@ package at.bestsolution.e4fx.app;
 
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.fx.ui.workbench.renderers.base.services.WindowTransitionService;
+import org.osgi.service.component.annotations.Component;
 
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 @SuppressWarnings("restriction")
-//@Component
+@Component
 public class WindowTransitionServiceSolution implements WindowTransitionService<Stage> {
 
 	@Override

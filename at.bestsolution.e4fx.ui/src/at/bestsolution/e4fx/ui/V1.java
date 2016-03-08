@@ -12,9 +12,12 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.core.services.events.IEventBroker;
+import org.eclipse.fx.core.di.ContextValue;
+import org.eclipse.fx.core.event.EventBus;
 import org.osgi.service.prefs.BackingStoreException;
 
 import javafx.beans.Observable;
+import javafx.beans.property.Property;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener.Change;
 import javafx.scene.control.ListView;
@@ -24,10 +27,11 @@ import javafx.scene.layout.BorderPane;
 @SuppressWarnings("restriction")
 public class V1 {
 	@Inject
-	IEclipseContext context;
+	@ContextValue(value="val")
+	Property<String> context;
 
 	@Inject
-	IEventBroker broker;
+	EventBus broker;
 
 
 	@Inject
@@ -43,8 +47,8 @@ public class V1 {
 		data.setItems(FXCollections.observableArrayList("Ab","Bb","Cb"));
 		data.getSelectionModel()
 			.getSelectedItems().addListener(this::handleSelectionListChange);
-		data.getSelectionModel()
-			.selectedItemProperty().addListener(this::handleSelection);
+		context.bind(data.getSelectionModel()
+			.selectedItemProperty());
 
 		parent.setCenter(data);
 
@@ -52,7 +56,7 @@ public class V1 {
 		t.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
-				broker.send(Constants.CURRENT_TIME, new Date().getTime());
+				broker.publish(Constants.CURRENT_TIME, new Date().getTime(), true);
 			}
 		}, 0, 1_000);
 	}
@@ -68,8 +72,8 @@ public class V1 {
 		} catch (BackingStoreException e) {}
 	}
 
-	private void handleSelection(Observable o, String oldV, String newV) {
-		context.getParent() // get the window context
-			.set("val", newV);
-	}
+//	private void handleSelection(Observable o, String oldV, String newV) {
+//		context.getParent() // get the window context
+//			.set("val", newV);
+//	}
 }

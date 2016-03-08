@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.e4fx.app.WindowTransitionServiceSolution">
+   <service>
+      <provide interface="org.eclipse.fx.ui.workbench.renderers.base.services.WindowTransitionService"/>
+   </service>
+   <implementation class="at.bestsolution.e4fx.app.WindowTransitionServiceSolution"/>
+</scr:component>

@@ -8,6 +8,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.fx.core.event.EventBus;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -20,12 +21,13 @@ public class V2 {
 	private Label preferenceValue = new Label();
 
 	@Inject
-	public V2(BorderPane parent) {
+	public V2(BorderPane parent, EventBus bus) {
 		VBox box = new VBox();
 		box.getChildren().add(currentSelection);
 		box.getChildren().add(currentTime);
 		box.getChildren().add(preferenceValue);
 		parent.setCenter(box);
+		bus.subscribe(Constants.CURRENT_TIME, EventBus.data(this::updateTime));
 	}
 
 	@Inject
@@ -33,9 +35,7 @@ public class V2 {
 		currentSelection.setText("Selected value: " + val);
 	}
 
-	@Inject
-	@Optional
-	public void updateTime(@UIEventTopic(Constants.CURRENT_TIME) long time) {
+	public void updateTime(long time) {
 		currentTime.setText(new Date(time).toString());
 	}
 
